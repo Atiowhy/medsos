@@ -62,21 +62,22 @@ include 'function/helper.php';
           $('#nama_anggota').val(res.data.nama_anggota);
           console.log(res);
 
-
           let tanggal_kembali = new moment(res.data.tgl_pengembalian)
 
           let currentDate = new Date().toJSON().slice(0, 10)
           console.log(currentDate);
 
-
-          let tanggal_di_kembalikan = new moment('2024-10-21')
+          let tanggal_di_kembalikan = new moment(currentDate)
           let selisih = tanggal_di_kembalikan.diff(tanggal_kembali, "days")
           let denda = 100000
-          console.log('tgl', selisih);
-
           let total_Denda = selisih * denda
+          // let keterangan = total_Denda + selisih + 'hari'
+          // console.log(keterangan);
           $('#denda').val(total_Denda)
-          console.log(total_Denda);
+          if (total_Denda <= 0) {
+            total_Denda = 0
+          }
+
 
 
           $.each(res.detail_peminjaman, function(key, val) {
