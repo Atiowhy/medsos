@@ -39,6 +39,7 @@ include 'function/helper.php';
     <!-- <footer class="text-center  p-3">Copyright &copy; 2024 PPKD - Jakarta Pusat.</footer> -->
   </div>
   <script src="assets/dist/js/jquery-3.7.1.min.js"></script>
+  <script src="assets/dist/js/moment.js"></script>
   <!-- <script src="assets/dist/js/bootstrap.min.js"></script> -->
   <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
   <script src="app.js"></script>
@@ -59,6 +60,24 @@ include 'function/helper.php';
           $('#tgl_peminjaman').val(res.data.tgl_peminjaman);
           $('#tgl_pengembalian').val(res.data.tgl_pengembalian);
           $('#nama_anggota').val(res.data.nama_anggota);
+          console.log(res);
+
+
+          let tanggal_kembali = new moment(res.data.tgl_pengembalian)
+
+          let currentDate = new Date().toJSON().slice(0, 10)
+          console.log(currentDate);
+
+
+          let tanggal_di_kembalikan = new moment('2024-10-21')
+          let selisih = tanggal_di_kembalikan.diff(tanggal_kembali, "days")
+          let denda = 100000
+          console.log('tgl', selisih);
+
+          let total_Denda = selisih * denda
+          $('#denda').val(total_Denda)
+          console.log(total_Denda);
+
 
           $.each(res.detail_peminjaman, function(key, val) {
             newRow += "<tr>";

@@ -45,11 +45,8 @@ $queryAnggota = mysqli_query($koneksi, "SELECT * FROM anggota");
 
 $queryKodePnjm = mysqli_query($koneksi, "SELECT * FROM peminjaman WHERE status ='Di Pinjam'");
 
-
-
-
 ?>
-<div class="container">
+<div class="container mt-5">
     <div class="row">
         <div class="col-sm-12">
             <fieldset class="border border-black border-2 p-3">
@@ -86,6 +83,11 @@ $queryKodePnjm = mysqli_query($koneksi, "SELECT * FROM peminjaman WHERE status =
                                                 <input type="text" readonly
                                                     id="tgl_peminjaman" class="form-control">
                                             </div>
+                                            <div class="mb-3">
+                                                <label for="" class="form-label">Denda</label>
+                                                <input type="text" readonly
+                                                    id="denda" class="form-control">
+                                            </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="mb-3">
@@ -98,6 +100,7 @@ $queryKodePnjm = mysqli_query($koneksi, "SELECT * FROM peminjaman WHERE status =
                                                 <input type="text" readonly
                                                     id="tgl_pengembalian" class="form-control">
                                             </div>
+
                                         </div>
 
                                     </div>
