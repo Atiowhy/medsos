@@ -1,7 +1,8 @@
 <?php
+session_start();
 include 'koneksi.php';
 
-if(isset($_POST['login'])){
+if (isset($_POST['login'])) {
     $email = $_POST['email'];
     $password = sha1($_POST['password']);
 
@@ -9,15 +10,18 @@ if(isset($_POST['login'])){
     $loginUser = mysqli_query($koneksi, "SELECT * FROM user WHERE email = '$email'");
 
     // cek database
-    if(mysqli_num_rows($loginUser) > 0){
+    if (mysqli_num_rows($loginUser) > 0) {
         $dataUser = mysqli_fetch_assoc($loginUser);
-        if($dataUser['password'] == $password){
+        if ($dataUser['password'] == $password) {
+            $_SESSION['NAME'] = $dataUser['username'];
+            $_SESSION['ID'] = $dataUser['id'];
+            // print_r($_SESSION['ID']);
+            // die;
             header('location: index.php?login-success');
         } else {
             header('location: index.php?failed-login');
         }
     }
-
 }
 ?>
 

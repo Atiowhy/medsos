@@ -24,25 +24,10 @@
                         </ul>
                     </li> -->
                     <li class="nav-item">
-                        <a class="nav-link" href="?pg=user">Manage Accounts</a>
+                        <a class="nav-link" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="?pg=anggota">Anggota</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="?pg=level">Level</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="?pg=kategori">Kategori</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="?pg=buku"> Buku</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="?pg=peminjaman"> Peminjaman</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="?pg=pengembalian"> Pengembalian</a>
+                        <a class="nav-link" href="?pg=profile">Profile</a>
                     </li>
                 </ul>
 
